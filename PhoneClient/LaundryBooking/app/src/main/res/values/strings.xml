@@ -33,7 +33,7 @@
     <string name="sorting">Sort Playlist </string>
     <string name="about">About</string>
     <string name="playall">Play Playlist</string>
-
+    <string name="pin_id">Pin id</string>
     <string name="booking">Booking</string>
     <string name="account">Account</string>
     <string name="observation">Observation</string>

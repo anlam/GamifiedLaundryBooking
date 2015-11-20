@@ -61,7 +61,16 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import no.hiof.anl.laundrybooking.Database.Database;
+import no.hiof.anl.laundrybooking.Database.UserInfo;
+import no.hiof.anl.laundrybooking.booking.BookingActivity;
+import no.hiof.anl.laundrybooking.observation.ObservationActivity;
 import no.hiof.anl.laundrybooking.picasso.CircleTransform;
+import no.hiof.anl.laundrybooking.settings.LoginDialog;
+import no.hiof.anl.laundrybooking.settings.SettingsActivity;
+import no.hiof.anl.laundrybooking.statistics.StatisticsActivity;
+
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -70,26 +79,21 @@ import java.util.HashSet;
 import java.util.Random;
 
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements LoginDialog.NoticeDialogListener
 {
-
-    public interface NoticeDialogListener
-    {
-        public void onNewSongPlayed(Activity activity);
-    }
-    public static NoticeDialogListener mListener;
-
-
     public static final String AVATAR_URL = "http://lorempixel.com/200/200/people/1/";
 
     private DrawerLayout drawerLayout;
     private TextView drawerName;
-    private TextView drawerEmail;
+    private UserInfo current_user;
+    private ImageView avatar;
 
     private View content;
 
-    String userName = "UserName";
-    String userEmail = "User Email";
+    static SharedPreferences settings;
+    static SharedPreferences.Editor editor;
+
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -101,13 +105,15 @@ public class MainActivity extends AppCompatActivity
         setupDrawerLayout();
 
 
-        setDrawerUserInfo();
-
         content = findViewById(R.id.content);
+        avatar = (ImageView) findViewById(R.id.avatar);
+        Picasso.with(this).load(R.drawable.avatar).transform(new CircleTransform()).into(avatar);
 
-        final ImageView avatar = (ImageView) findViewById(R.id.avatar);
-        Picasso.with(this).load(AVATAR_URL).transform(new CircleTransform()).into(avatar);
+        settings = this.getPreferences(MODE_PRIVATE);
+        editor = settings.edit();
 
+        //setDrawerUserInfo();
+        Database.getAllUsers();
 
     }
 
@@ -116,15 +122,62 @@ public class MainActivity extends AppCompatActivity
     protected void onResume()
     {
         super.onResume();
+        boolean isFirstTimeOpenApp = settings.getBoolean("isFirstTimeOpenApp", true);
+
+        if(isFirstTimeOpenApp)
+        {
+            DialogFragment loginDialog = new LoginDialog();
+            loginDialog.show(getFragmentManager(), "Fisrt Time Using");
+            loginDialog.setCancelable(false);
+        }
+        else
+        {
+            String json = settings.getString("userInfo", null);
+            Gson gson = new Gson();
+            current_user = gson.fromJson(json, UserInfo.class);
+            setDrawerUserInfo();
+        }
 
     }
 
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog)
+    {
+        editor.putBoolean("isFirstTimeOpenApp", false);
+
+
+        LoginDialog loginDialog = (LoginDialog) dialog;
+
+        current_user = loginDialog.getUserInfo();
+
+        Gson gson = new Gson();
+
+        editor.putString("userInfo", gson.toJson(current_user));
+        editor.commit();
+
+        setDrawerUserInfo();
+
+        loginDialog.dismiss();
+    }
 
     private void setDrawerUserInfo()
     {
-        drawerName.setText(userName);
-        drawerEmail.setText(userEmail);
+        if(current_user != null) {
+            drawerName.setText(current_user.name);
+            if(current_user.avatar != null)
+            {
+                mHandler.post(mUpdateAvatar);
+            }
+        }
+        //drawerEmail.setText(userEmail);
     }
+
+    Runnable mUpdateAvatar = new Runnable() {
+        @Override
+        public void run() {
+            Picasso.with(getBaseContext()).load(current_user.avatar).transform(new CircleTransform()).into(avatar);
+        }
+    };
 
 
     /**
@@ -163,15 +216,36 @@ public class MainActivity extends AppCompatActivity
         view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override public boolean onNavigationItemSelected(MenuItem menuItem)
             {
+                menuItem.setChecked(false);
                 switch (menuItem.getItemId()) {
                     case R.id.drawer_home:
                         menuItem.setChecked(false);
                         drawerLayout.closeDrawers();
                         return true;
-
-                   // case R.id.drawer_downloaded:
-                    //    PlayListGenerationOptionsDialog playslitDiag = new PlayListGenerationOptionsDialog();
-                    //    playslitDiag.show(getFragmentManager(), "PlayList");
+                    case R.id.drawer_statistics:
+                        Intent i = new Intent(getApplicationContext(), StatisticsActivity.class);
+                        startActivity(i);
+                        return true;
+                    case R.id.drawer_booking:
+                        i = new Intent(getApplicationContext(), BookingActivity.class);
+                        startActivity(i);
+                        drawerLayout.closeDrawers();
+                        return true;
+                    case R.id.drawer_observation:
+                        i = new Intent(getApplicationContext(), ObservationActivity.class);
+                        startActivity(i);
+                        drawerLayout.closeDrawers();
+                        return true;
+                    case R.id.drawer_setting:
+                        i = new Intent(getApplicationContext(), SettingsActivity.class);
+                        startActivity(i);
+                        drawerLayout.closeDrawers();
+                        return true;
+                    case R.id.drawer_about:
+                        Snackbar.make(content, menuItem.getTitle() + " pressed", Snackbar.LENGTH_LONG).show();
+                        menuItem.setChecked(false);
+                        drawerLayout.closeDrawers();
+                        return true;
                     default:
                         Snackbar.make(content, menuItem.getTitle() + " pressed", Snackbar.LENGTH_LONG).show();
                         menuItem.setChecked(false);
@@ -183,7 +257,7 @@ public class MainActivity extends AppCompatActivity
         });
 
         drawerName = (TextView) drawerLayout.findViewById(R.id.drawer_name);
-        drawerEmail = (TextView) drawerLayout.findViewById(R.id.drawer_email);
+        //drawerEmail = (TextView) drawerLayout.findViewById(R.id.drawer_email);
 
     }
 

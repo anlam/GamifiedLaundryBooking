@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MachineClient</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="machine_name">Machine 1</string>
+    <string name="back">Back</string>
+    <string name="enter">Enter</string>
+    <string name="start">Start</string>
+    <string name="cancel">Cancel</string>
+    <string name="action_settings">Settings</string>
+</resources>

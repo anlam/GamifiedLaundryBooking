@@ -29,20 +29,21 @@
         android:id="@+id/avatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_margin="@dimen/spacing_large"
+        android:layout_marginLeft="@dimen/spacing_large"
+
+        android:layout_marginTop="@dimen/spacing_large"
         android:elevation="4dp"
-        tools:src="@drawable/ic_launcher"/>
+        tools:src="@drawable/ic_launcher_new"/>
 
     <TextView
         android:id="@+id/drawer_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/drawer_email"
         android:layout_marginLeft="@dimen/spacing_large"
-        android:layout_marginStart="@dimen/spacing_large"
         android:text="Username"
+        android:layout_below="@id/avatar"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-    <TextView
+ <!--   <TextView
         android:id="@+id/drawer_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +52,6 @@
         android:layout_marginStart="@dimen/spacing_large"
         android:layout_marginBottom="@dimen/spacing_large"
         android:text="username@mymail.com"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/> -->
 
 </RelativeLayout>
