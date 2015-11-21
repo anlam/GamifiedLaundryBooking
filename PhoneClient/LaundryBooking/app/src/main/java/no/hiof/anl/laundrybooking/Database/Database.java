@@ -48,6 +48,9 @@ public class Database
         user = new UserInfo("Newt", 66666, 66666, 550, 2000, "http://vignette3.wikia.nocookie.net/mazerunner/images/7/78/Glader_Newt.png/revision/latest?cb=20140731183732");
         addUser(user);
 
+        user = new UserInfo("An Lam", 77777, 77777, 550, 2000, null);
+        addUser(user);
+
     }
 
     public static void updateAwardsPoints(BookingInfo bookinginfo)

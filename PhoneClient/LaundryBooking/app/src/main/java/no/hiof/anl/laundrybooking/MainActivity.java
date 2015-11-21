@@ -54,8 +54,10 @@ import android.webkit.MimeTypeMap;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -63,6 +65,8 @@ import android.widget.Toast;
 
 import no.hiof.anl.laundrybooking.Database.Database;
 import no.hiof.anl.laundrybooking.Database.UserInfo;
+import no.hiof.anl.laundrybooking.account.Info;
+import no.hiof.anl.laundrybooking.account.InfoAdapter;
 import no.hiof.anl.laundrybooking.booking.BookingActivity;
 import no.hiof.anl.laundrybooking.observation.ObservationActivity;
 import no.hiof.anl.laundrybooking.picasso.CircleTransform;
@@ -95,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
     private Handler mHandler = new Handler();
 
+    private ListView info_listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -111,6 +117,24 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
         settings = this.getPreferences(MODE_PRIVATE);
         editor = settings.edit();
+
+        info_listView  = (ListView) findViewById(R.id.info_listview);
+        //TextView textView = new TextView(this);
+        //textView.setText("Hello. I'm a header view");
+        //info_listView.addHeaderView(textView);
+
+        ArrayList<Info> strings = new ArrayList<>();
+        strings.add(new Info("One", true));
+        strings.add(new Info("Two", false));
+        strings.add(new Info("One Two TwoTwo ", true));
+        strings.add(new Info("OneTwoTwoTwoTwo", false));
+        strings.add(new Info("OneTwoTwoTwoTwoTwoTwo", true));
+        strings.add(new Info("OneTwoTwoTwoTwoTwo", false));
+
+        InfoAdapter adapter = new InfoAdapter(this, strings);
+
+
+        info_listView.setAdapter(adapter);
 
         //setDrawerUserInfo();
         Database.getAllUsers();

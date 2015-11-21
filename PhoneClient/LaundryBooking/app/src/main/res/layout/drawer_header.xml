@@ -26,14 +26,14 @@
              android:id="@+id/header_view">
 
     <ImageView
-        android:id="@+id/avatar"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="@dimen/spacing_large"
+    android:id="@+id/avatar"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_marginLeft="@dimen/spacing_large"
 
-        android:layout_marginTop="@dimen/spacing_large"
-        android:elevation="4dp"
-        tools:src="@drawable/ic_launcher_new"/>
+    android:layout_marginTop="@dimen/spacing_large"
+    android:elevation="4dp"
+    tools:src="@drawable/ic_launcher_new"/>
 
     <TextView
         android:id="@+id/drawer_name"
