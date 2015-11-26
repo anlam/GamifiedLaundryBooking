@@ -35,6 +35,7 @@
     <string name="playall">Play Playlist</string>
     <string name="pin_id">Pin id</string>
     <string name="booking">Booking</string>
+    <string name="leaderboard">Leader Board</string>
     <string name="account">Account</string>
     <string name="observation">Observation</string>
 </resources>

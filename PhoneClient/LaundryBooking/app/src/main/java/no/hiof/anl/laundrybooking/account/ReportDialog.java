@@ -1,4 +1,4 @@
-package no.hiof.anl.laundrybooking.settings;
+package no.hiof.anl.laundrybooking.account;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -14,36 +14,40 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import no.hiof.anl.laundrybooking.Database.Database;
-import no.hiof.anl.laundrybooking.Database.UserInfo;
 import no.hiof.anl.laundrybooking.R;
-
+import no.hiof.anl.laundrybooking.settings.LoginDialog;
 
 /**
- * Created by An on 10/4/2015.
+ * Created by An on 11/26/2015.
  */
-public class LoginDialog extends DialogFragment
+public class ReportDialog extends DialogFragment
 {
-    NoticeDialogListener mListener;
-    //private String fullname = "";
-   // private String email = "";
-    private EditText pinEditext;
-    private TextView infoTextbox;
-    private int pinID;
-    private UserInfo userInfo;
-    //private EditText emailEditor;
 
     public interface NoticeDialogListener {
-        public void onDialogPositiveClick(LoginDialog dialog);
+        public void onDialogPositiveClick(ReportDialog dialog);
         //public void onDialogNegativeClick(DialogFragment dialog);
     }
+
+    NoticeDialogListener mListener;
+    EditText machine_id_edittext_report_dialog;
+    EditText booking_id_edittext_report_dialog;
+    TextView status_textbox_report_idalog;
+
+    public int machine_id;
+    public int booking_id;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        final View view = inflater.inflate(R.layout.dialog_login, null);
+        final View view = inflater.inflate(R.layout.report_dialog, null);
 
+
+        machine_id_edittext_report_dialog = (EditText) view.findViewById(R.id.machine_id_edittext_report_dialog);
+        booking_id_edittext_report_dialog = (EditText) view.findViewById(R.id.machine_id_edittext_report_dialog);
+        status_textbox_report_idalog = (TextView) view.findViewById(R.id.status_textbox_report_idalog);
+        status_textbox_report_idalog.setText("");
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
@@ -54,26 +58,17 @@ public class LoginDialog extends DialogFragment
                     public void onClick(DialogInterface dialog, int id) {
 
                     }
-                });
-           /*     .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id)
-            {
-                mListener.onDialogNegativeClick(LoginDiaglog.this);
-            }
-        });*/
+                })
+               .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       ReportDialog.this.dismiss();
+                   }
+               });
 
-        pinEditext = (EditText) view.findViewById(R.id.pin_editext);
-        infoTextbox = (TextView) view.findViewById(R.id.info_textbox);
+
 
         return builder.create();
     }
-
-   /* @Override
-    public void onCancel(DialogInterface dialog)
-    {
-        mListener.onDialogNegativeClick(LoginDiaglog.this);
-        super.onCancel(dialog);
-    }*/
 
     @Override
     public void onStart()
@@ -89,28 +84,23 @@ public class LoginDialog extends DialogFragment
                 public void onClick(View v)
                 {
 
-                    String tString = pinEditext.getText().toString();
-                    if(tString != null && !tString.isEmpty())
-                    {
-                        pinID = Integer.parseInt(tString);
-                        userInfo = Database.getUserByPin(pinID);
-                        if(userInfo != null)
-                            mListener.onDialogPositiveClick(LoginDialog.this);
-                        else {
-                            infoTextbox.setTextColor(Color.RED);
-                            infoTextbox.setText("Invalid Pin ID");
-                        }
+                    String machine_id_text = machine_id_edittext_report_dialog.getText().toString();
+                    String booking_id_text = booking_id_edittext_report_dialog.getText().toString();
 
+                    if (machine_id_text.isEmpty())
+                        status_textbox_report_idalog.setText("Please enter machine id");
+                    else if (booking_id_text.isEmpty())
+                        status_textbox_report_idalog.setText("Please enter empty id");
+                    else {
+                        machine_id = Integer.parseInt(machine_id_text);
+                        booking_id = Integer.parseInt(booking_id_text);
+                        mListener.onDialogPositiveClick(ReportDialog.this);
                     }
                 }
             });
         }
     }
 
-    // Use this instance of the interface to deliver action events
-
-
-    // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -125,14 +115,6 @@ public class LoginDialog extends DialogFragment
         }
     }
 
-    public int getPinID()
-    {
-        return pinID;
-    }
 
-    public UserInfo getUserInfo()
-    {
-        return userInfo;
-    }
 
 }

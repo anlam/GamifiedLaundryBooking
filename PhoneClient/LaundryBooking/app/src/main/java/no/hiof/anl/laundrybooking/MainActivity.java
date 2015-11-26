@@ -17,6 +17,8 @@
 package no.hiof.anl.laundrybooking;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ContentUris;
 import android.content.Intent;
@@ -43,6 +45,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -55,6 +58,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -67,6 +71,8 @@ import no.hiof.anl.laundrybooking.Database.Database;
 import no.hiof.anl.laundrybooking.Database.UserInfo;
 import no.hiof.anl.laundrybooking.account.Info;
 import no.hiof.anl.laundrybooking.account.InfoAdapter;
+import no.hiof.anl.laundrybooking.account.LeaderBoardActivity;
+import no.hiof.anl.laundrybooking.account.ReportDialog;
 import no.hiof.anl.laundrybooking.booking.BookingActivity;
 import no.hiof.anl.laundrybooking.observation.ObservationActivity;
 import no.hiof.anl.laundrybooking.picasso.CircleTransform;
@@ -74,8 +80,12 @@ import no.hiof.anl.laundrybooking.settings.LoginDialog;
 import no.hiof.anl.laundrybooking.settings.SettingsActivity;
 import no.hiof.anl.laundrybooking.statistics.StatisticsActivity;
 
+import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -83,13 +93,17 @@ import java.util.HashSet;
 import java.util.Random;
 
 
-public class MainActivity extends AppCompatActivity implements LoginDialog.NoticeDialogListener
+public class MainActivity extends AppCompatActivity implements LoginDialog.NoticeDialogListener,
+        ReportDialog.NoticeDialogListener
 {
     public static final String AVATAR_URL = "http://lorempixel.com/200/200/people/1/";
 
     private DrawerLayout drawerLayout;
     private TextView drawerName;
+
     private UserInfo current_user;
+
+
     private ImageView avatar;
 
     private View content;
@@ -100,6 +114,13 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
     private Handler mHandler = new Handler();
 
     private ListView info_listView;
+
+
+    private Button leaderboard_button;
+    private Button report_button;
+    private ImageButton clear_all_message_button;
+
+    private static ArrayList<Info> messages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -122,22 +143,86 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
         //TextView textView = new TextView(this);
         //textView.setText("Hello. I'm a header view");
         //info_listView.addHeaderView(textView);
-
-        ArrayList<Info> strings = new ArrayList<>();
-        strings.add(new Info("One", true));
-        strings.add(new Info("Two", false));
-        strings.add(new Info("One Two TwoTwo ", true));
-        strings.add(new Info("OneTwoTwoTwoTwo", false));
-        strings.add(new Info("OneTwoTwoTwoTwoTwoTwo", true));
-        strings.add(new Info("OneTwoTwoTwoTwoTwo", false));
-
-        InfoAdapter adapter = new InfoAdapter(this, strings);
+        //updateMessages();
 
 
+
+        leaderboard_button = (Button) findViewById(R.id.leaderboard_button);
+        leaderboard_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), LeaderBoardActivity.class);
+                i.putExtra("current_user_id", current_user.id);
+                startActivity(i);
+            }
+        });
+
+        report_button = (Button) findViewById(R.id.report_button);
+        report_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReportDialog reportDialog = new ReportDialog();
+                reportDialog.setCancelable(false);
+                reportDialog.show(getFragmentManager(), "Report Dialog");
+
+            }
+        });
+
+        clear_all_message_button = (ImageButton) findViewById(R.id.clear_all_message_button);
+        clear_all_message_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                messages.clear();
+                updateMessages();
+            }
+        });
+        Database.getAllUsers();
+
+    }
+
+    private void updateMessages()
+    {
+        InfoAdapter adapter = new InfoAdapter(this, messages);
         info_listView.setAdapter(adapter);
 
-        //setDrawerUserInfo();
-        Database.getAllUsers();
+        Gson gson = new Gson();
+        String json = gson.toJson(messages);
+        Log.i("updateMessages", json);
+        editor.putString("messages", json);
+        editor.commit();
+
+    }
+
+
+    private void displayUserInfo()
+    {
+        final ImageView home_avatar = (ImageView) findViewById(R.id.home_avatar);
+
+        TextView home_username = (TextView) findViewById((R.id.home_username));
+        home_username.setText(current_user.name);
+
+        TextView home_balance = (TextView) findViewById((R.id.home_balance));
+        home_balance.setText(current_user.balance + " NOK");
+
+        TextView home_points = (TextView) findViewById((R.id.home_points));
+        home_points.setText(current_user.points + " Points");
+
+        TextView home_level = (TextView) findViewById((R.id.home_level));
+        home_level.setText("Level " + current_user.level);
+
+        RoundCornerProgressBar progress_bar = (RoundCornerProgressBar) findViewById(R.id.progress_bar);
+        progress_bar.setProgress(current_user.progress_percent);
+
+        if(current_user.avatar == null)
+             Picasso.with(this).load(R.drawable.avatar).transform(new CircleTransform()).into(avatar);
+        else
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    Picasso.with(getBaseContext()).load(current_user.avatar).transform(new CircleTransform()).into(home_avatar);
+                }
+            });
+
 
     }
 
@@ -150,38 +235,50 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
         if(isFirstTimeOpenApp)
         {
+            messages = new ArrayList<>();
             DialogFragment loginDialog = new LoginDialog();
             loginDialog.show(getFragmentManager(), "Fisrt Time Using");
             loginDialog.setCancelable(false);
         }
         else
         {
-            String json = settings.getString("userInfo", null);
-            Gson gson = new Gson();
-            current_user = gson.fromJson(json, UserInfo.class);
+            int user_pin = settings.getInt("userPin", 0);
+            //String json = settings.getString("userInfo", null);
+            //
+            current_user = Database.getUserByPin(user_pin);
             setDrawerUserInfo();
+            displayUserInfo();
+
+            String json = settings.getString("messages", null);
+            Log.i("Messages", json);
+            Gson gson = new Gson();
+            Type collectionType = new TypeToken<ArrayList<Info>>(){}.getType();
+            messages = gson.fromJson(json, collectionType);
+            updateMessages();
+            displayUserInfo();
         }
 
     }
 
     @Override
-    public void onDialogPositiveClick(DialogFragment dialog)
+    public void onDialogPositiveClick(LoginDialog dialog)
     {
         editor.putBoolean("isFirstTimeOpenApp", false);
 
 
-        LoginDialog loginDialog = (LoginDialog) dialog;
+        LoginDialog loginDialog = dialog;
 
         current_user = loginDialog.getUserInfo();
 
-        Gson gson = new Gson();
+        //Gson gson = new Gson();
 
-        editor.putString("userInfo", gson.toJson(current_user));
+        editor.putInt("userPin", current_user.pin);
         editor.commit();
 
         setDrawerUserInfo();
 
         loginDialog.dismiss();
+        displayUserInfo();
     }
 
     private void setDrawerUserInfo()
@@ -311,6 +408,50 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
     protected void onPause()
     {
         super.onPause();
+        // gson = new Gson();
+        //editor.putString("userInfo", gson.toJson(current_user));
+        //editor.commit();
     }
+
+    @Override
+    public void onDialogPositiveClick(ReportDialog dialog)
+    {
+        int awards = 10;
+
+        Info info = new Info("You got " + awards + " points for reporting", true);
+        messages.add(info);
+        addUserPoints(awards);
+        updateMessages();
+        displayUserInfo();
+
+        Database.UpdateUserInfo(current_user);
+
+        dialog.dismiss();
+    }
+
+    private void addUserPoints(int points)
+    {
+        current_user.points += points;
+        current_user.progress_points += points;
+        int points_to_new_level = UserInfo.scale * current_user.level;
+        if(current_user.progress_points > points_to_new_level)
+        {
+            current_user.level++;
+            current_user.progress_points = current_user.progress_points - points_to_new_level;
+
+            Info info = new Info("You have got to level " + current_user.level, true);
+            messages.add(info);
+
+            int awards = UserInfo.scale *(current_user.level - 1)/2;
+            info = new Info("You got " + awards + " points for getting to level " + current_user.level, true);
+            messages.add(info);
+
+            addUserPoints(awards);
+        }
+
+        current_user.progress_percent = current_user.progress_points * 100 /(UserInfo.scale * current_user.level);
+
+    }
+
 
 }

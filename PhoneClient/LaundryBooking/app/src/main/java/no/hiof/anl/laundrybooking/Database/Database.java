@@ -30,27 +30,32 @@ public class Database
 
     public static void getAllUsers()
     {
-        UserInfo user = new UserInfo("Thomas", 107761285, 11111, 450, 7000, "https://s-media-cache-ak0.pinimg.com/736x/84/00/5c/84005cfa9fd840b18dbf04f600f0aee0.jpg");
+        UserInfo user = new UserInfo("Thomas", 107761285, 11111, 450, 7000, "https://s-media-cache-ak0.pinimg.com/736x/84/00/5c/84005cfa9fd840b18dbf04f600f0aee0.jpg", 4, 50);
         addUser(user);
 
-        user = new UserInfo("Alby", 22222, 22222, 350, 5000, "http://images6.fanpop.com/image/photos/37600000/Alby-the-maze-runner-37638950-1200-1000.png");
+        user = new UserInfo("Alby", 22222, 22222, 350, 5000, "http://images6.fanpop.com/image/photos/37600000/Alby-the-maze-runner-37638950-1200-1000.png", 5, 70);
         addUser(user);
 
-        user = new UserInfo("Chuck", 33333, 33333, 150, 1000, "http://img2.wikia.nocookie.net/__cb20141018073627/mazerunner/images/8/8d/Chuck-the-maze-runner-37624809-1200-1000.png");
+        user = new UserInfo("Chuck", 33333, 33333, 150, 1000, "http://img2.wikia.nocookie.net/__cb20141018073627/mazerunner/images/8/8d/Chuck-the-maze-runner-37624809-1200-1000.png", 8, 70);
         addUser(user);
 
-        user = new UserInfo("Minho", 44444, 44444, 850, 4000, "http://vignette2.wikia.nocookie.net/mazerunner/images/c/c9/TMRposter-minho.jpg/revision/latest/top-crop/width/240/height/240?cb=20140916191235");
+        user = new UserInfo("Minho", 44444, 44444, 850, 4000, "http://vignette2.wikia.nocookie.net/mazerunner/images/c/c9/TMRposter-minho.jpg/revision/latest/top-crop/width/240/height/240?cb=20140916191235", 1, 20);
         addUser(user);
 
-        user = new UserInfo("Teresa", 55555, 55555, 850, 5000, "http://www.ehiyo.com/wp-content/uploads/2014/11/teresa-the-maze-runner-10866.jpg");
+        user = new UserInfo("Teresa", 55555, 55555, 850, 5000, "http://www.ehiyo.com/wp-content/uploads/2014/11/teresa-the-maze-runner-10866.jpg", 3, 60);
         addUser(user);
 
-        user = new UserInfo("Newt", 66666, 66666, 550, 2000, "http://vignette3.wikia.nocookie.net/mazerunner/images/7/78/Glader_Newt.png/revision/latest?cb=20140731183732");
+        user = new UserInfo("Newt", 66666, 66666, 550, 2000, "http://vignette3.wikia.nocookie.net/mazerunner/images/7/78/Glader_Newt.png/revision/latest?cb=20140731183732", 9, 80);
         addUser(user);
 
-        user = new UserInfo("An Lam", 77777, 77777, 550, 2000, null);
+        user = new UserInfo("An Lam", 77777, 77777, 550, 2000, null, 2, 25);
         addUser(user);
 
+    }
+
+    public static ArrayList<UserInfo> getUserList()
+    {
+        return new ArrayList<>(PinToUser.values());
     }
 
     public static void updateAwardsPoints(BookingInfo bookinginfo)
@@ -96,6 +101,11 @@ public class Database
     public static BookingInfo getNextBooking(int machine_id, String date)
     {
         return null;
+
+    }
+
+    public static void UpdateUserInfo(UserInfo userInfo)
+    {
 
     }
 
