@@ -46,8 +46,8 @@
 
         <item
             android:id="@+id/drawer_setting"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="@string/settings"/>
+            android:icon="@drawable/ic_notification"
+            android:title="@string/notification"/>
 
         <item
             android:id="@+id/drawer_about"

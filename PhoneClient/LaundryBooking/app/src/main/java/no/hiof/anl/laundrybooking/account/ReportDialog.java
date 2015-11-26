@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -13,9 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import no.hiof.anl.laundrybooking.Database.Database;
 import no.hiof.anl.laundrybooking.R;
-import no.hiof.anl.laundrybooking.settings.LoginDialog;
 
 /**
  * Created by An on 11/26/2015.

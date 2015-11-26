@@ -16,20 +16,11 @@
 
 package no.hiof.anl.laundrybooking;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.ContentUris;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaMetadataRetriever;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -37,35 +28,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import android.net.Uri;
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.webkit.MimeTypeMap;
 
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import no.hiof.anl.laundrybooking.Database.Database;
 import no.hiof.anl.laundrybooking.Database.UserInfo;
@@ -76,21 +52,13 @@ import no.hiof.anl.laundrybooking.account.ReportDialog;
 import no.hiof.anl.laundrybooking.booking.BookingActivity;
 import no.hiof.anl.laundrybooking.observation.ObservationActivity;
 import no.hiof.anl.laundrybooking.picasso.CircleTransform;
-import no.hiof.anl.laundrybooking.settings.LoginDialog;
-import no.hiof.anl.laundrybooking.settings.SettingsActivity;
+import no.hiof.anl.laundrybooking.notification.NotificationActivity;
 import no.hiof.anl.laundrybooking.statistics.StatisticsActivity;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity implements LoginDialog.NoticeDialogListener,
@@ -119,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
     private Button leaderboard_button;
     private Button report_button;
     private ImageButton clear_all_message_button;
+    private Button logout_button;
 
     private static ArrayList<Info> messages;
 
@@ -176,6 +145,18 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
                 updateMessages();
             }
         });
+
+        logout_button = (Button) findViewById(R.id.logout_button);
+        logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editor.putBoolean("isFirstTimeOpenApp", true);
+                editor.commit();
+                System.exit(0);
+            }
+        });
+
         Database.getAllUsers();
 
     }
@@ -236,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
         if(isFirstTimeOpenApp)
         {
             messages = new ArrayList<>();
+            updateMessages();
             DialogFragment loginDialog = new LoginDialog();
             loginDialog.show(getFragmentManager(), "Fisrt Time Using");
             loginDialog.setCancelable(false);
@@ -250,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
             displayUserInfo();
 
             String json = settings.getString("messages", null);
-            Log.i("Messages", json);
+            //Log.i("Messages", json);
             Gson gson = new Gson();
             Type collectionType = new TypeToken<ArrayList<Info>>(){}.getType();
             messages = gson.fromJson(json, collectionType);
@@ -358,7 +340,7 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.drawer_setting:
-                        i = new Intent(getApplicationContext(), SettingsActivity.class);
+                        i = new Intent(getApplicationContext(), NotificationActivity.class);
                         startActivity(i);
                         drawerLayout.closeDrawers();
                         return true;

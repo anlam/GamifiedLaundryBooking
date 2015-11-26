@@ -1,4 +1,4 @@
-package no.hiof.anl.laundrybooking.settings;
+package no.hiof.anl.laundrybooking;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import no.hiof.anl.laundrybooking.Database.Database;
 import no.hiof.anl.laundrybooking.Database.UserInfo;
-import no.hiof.anl.laundrybooking.R;
 
 
 /**
