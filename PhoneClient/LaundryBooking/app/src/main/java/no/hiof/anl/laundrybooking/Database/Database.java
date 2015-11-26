@@ -2,6 +2,7 @@ package no.hiof.anl.laundrybooking.Database;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 import no.hiof.anl.laundrybooking.Database.BookingInfo;
@@ -107,6 +108,125 @@ public class Database
     public static void UpdateUserInfo(UserInfo userInfo)
     {
 
+    }
+
+    public static LinkedHashMap<String, LinkedHashMap<String, Integer>> getStatistics()
+    {
+        LinkedHashMap<String, LinkedHashMap<String, Integer>> ret = new LinkedHashMap<>();
+
+        //Monday
+        LinkedHashMap<String, Integer> day = new LinkedHashMap<>();
+        day.put("0-2", 5);
+        day.put("2-4", 2);
+        day.put("4-6", 1);
+        day.put("6-8", 10);
+        day.put("8-10", 10);
+        day.put("10-12", 13);
+        day.put("12-14", 13);
+        day.put("14-16", 15);
+        day.put("16-18", 20);
+        day.put("18-20", 25);
+        day.put("20-22", 30);
+        day.put("22-24", 35);
+        ret.put("Mon", day);
+
+        //Tuesday
+        day = new LinkedHashMap<>();
+        day.put("0-2", 2);
+        day.put("2-4", 0);
+        day.put("4-6", 1);
+        day.put("6-8", 8);
+        day.put("8-10", 8);
+        day.put("10-12", 13);
+        day.put("12-14", 15);
+        day.put("14-16", 15);
+        day.put("16-18", 20);
+        day.put("18-20", 25);
+        day.put("20-22", 40);
+        day.put("22-24", 20);
+        ret.put("Tue", day);
+
+        //Wednesday
+        day = new LinkedHashMap<>();
+        day.put("0-2", 1);
+        day.put("2-4", 0);
+        day.put("4-6", 1);
+        day.put("6-8", 8);
+        day.put("8-10", 8);
+        day.put("10-12", 12);
+        day.put("12-14", 10);
+        day.put("14-16", 10);
+        day.put("16-18", 16);
+        day.put("18-20", 25);
+        day.put("20-22", 30);
+        day.put("22-24", 20);
+        ret.put("Wed", day);
+
+        //Thursday
+        day = new LinkedHashMap<>();
+        day.put("0-2", 2);
+        day.put("2-4", 1);
+        day.put("4-6", 0);
+        day.put("6-8", 5);
+        day.put("8-10", 10);
+        day.put("10-12", 11);
+        day.put("12-14", 12);
+        day.put("14-16", 14);
+        day.put("16-18", 16);
+        day.put("18-20", 21);
+        day.put("20-22", 25);
+        day.put("22-24", 12);
+        ret.put("Thu", day);
+
+        //Friday
+        day = new LinkedHashMap<>();
+        day.put("0-2", 4);
+        day.put("2-4", 0);
+        day.put("4-6", 1);
+        day.put("6-8", 5);
+        day.put("8-10", 16);
+        day.put("10-12", 10);
+        day.put("12-14", 12);
+        day.put("14-16", 15);
+        day.put("16-18", 16);
+        day.put("18-20", 20);
+        day.put("20-22", 26);
+        day.put("22-24", 12);
+        ret.put("Fri", day);
+
+        //Saturday
+        day = new LinkedHashMap<>();
+        day.put("0-2", 15);
+        day.put("2-4", 10);
+        day.put("4-6", 7);
+        day.put("6-8", 2);
+        day.put("8-10", 20);
+        day.put("10-12", 30);
+        day.put("12-14", 30);
+        day.put("14-16", 25);
+        day.put("16-18", 35);
+        day.put("18-20", 36);
+        day.put("20-22", 40);
+        day.put("22-24", 45);
+        ret.put("Sat", day);
+
+        //Sunday
+        day = new LinkedHashMap<>();
+        day.put("0-2", 20);
+        day.put("2-4", 15);
+        day.put("4-6", 8);
+        day.put("6-8", 10);
+        day.put("8-10", 25);
+        day.put("10-12", 20);
+        day.put("12-14", 25);
+        day.put("14-16", 26);
+        day.put("16-18", 30);
+        day.put("18-20", 30);
+        day.put("20-22", 25);
+        day.put("22-24", 20);
+        ret.put("Sun", day);
+
+        return ret;
     }
 
 }

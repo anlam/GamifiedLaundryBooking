@@ -14,6 +14,14 @@
         android:dividerHeight="5dp">
     </ListView> -->
 
+    <ListView
+        android:id="@+id/list_chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:dividerHeight="5dp">
+    </ListView>
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"

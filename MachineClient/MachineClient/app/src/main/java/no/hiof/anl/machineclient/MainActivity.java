@@ -53,6 +53,7 @@ public class MainActivity extends Activity
     TextView detail_instruction_textbox;
     TextView amount_textbox;
     TextView unit_textbox;
+    TextView booking_id_textbox;
     //TextView duration_textbox;
     Spinner duration_spiner;
     RadioGroup payment_radiogroup;
@@ -196,6 +197,9 @@ public class MainActivity extends Activity
                 updateAmount();
             }
         });
+
+        booking_id_textbox = (TextView) findViewById(R.id.booking_id_textbox);
+        booking_id_textbox.setText("");
 
         Database.getAllUsers();
         mHandler.post(mUpdateTimeRunnable);
@@ -383,6 +387,7 @@ public class MainActivity extends Activity
         {
             time_textbox.setText("In " + mins + " mins");
         }
+        booking_id_textbox.setText("Booking ID: " + current_booking.id);
 
         //mHandler.postDelayed(mBackToLoginState, 60*1000);
     }
@@ -730,7 +735,7 @@ public class MainActivity extends Activity
                 Database.updateBookingInfo(machine_id, current_booking);
 
                 machine_state = MACHINE_STATE.AVAILABLE;
-                mHandler.postDelayed(mBackToLoginState, 60000);
+                //mHandler.postDelayed(mBackToLoginState, 60000);
             }
         }
 

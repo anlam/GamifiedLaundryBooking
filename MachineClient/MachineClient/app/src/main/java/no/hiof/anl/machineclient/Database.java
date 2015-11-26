@@ -44,9 +44,9 @@ public class Database
         user = new UserInfo("Newt", 66666, 66666, 550, 2000);
         addUser(user);
 
-        booking = new BookingInfo(1, 22222, 1);
-        GregorianCalendar gregorianCalendar = new GregorianCalendar();
-        booking.updateTime(gregorianCalendar.getTimeInMillis() + 115 * 60 * 1000);
+        //booking = new BookingInfo(1, 22222, 1);
+        //GregorianCalendar gregorianCalendar = new GregorianCalendar();
+       // booking.updateTime(gregorianCalendar.getTimeInMillis() + 115 * 60 * 1000);
 
     }
 
@@ -93,8 +93,8 @@ public class Database
     public static BookingInfo getNextBooking(int machine_id, String date)
     {
         //return null;
-        //return null;
-        return booking;
+        return null;
+        //return booking;
     }
 
 }
