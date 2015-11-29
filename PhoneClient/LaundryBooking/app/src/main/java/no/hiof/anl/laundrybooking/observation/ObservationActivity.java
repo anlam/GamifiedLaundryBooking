@@ -1,10 +1,14 @@
 package no.hiof.anl.laundrybooking.observation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 
 import no.hiof.anl.laundrybooking.R;
+import no.hiof.anl.laundrybooking.booking.BookingActivity;
 
 /**
  * Created by An on 11/20/2015.
@@ -21,5 +25,20 @@ public class ObservationActivity extends AppCompatActivity
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setupUIEvents();
+    }
+
+    private void setupUIEvents() {
+        Button btnGoToBooking = (Button) findViewById(R.id.btnGoToBooking);
+        btnGoToBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ObservationActivity.this, BookingActivity.class);
+                ObservationActivity.this.startActivity(myIntent);
+
+            }
+        });
+
     }
 }
