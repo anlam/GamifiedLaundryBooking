@@ -163,6 +163,15 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
     private void updateMessages()
     {
+        if(messages.isEmpty()) {
+            Info info = new Info("You have got to level " + current_user.level, true);
+            messages.add(info);
+
+            int awards = UserInfo.scale * (current_user.level - 1) / 2;
+            info = new Info("You got " + awards + " points for getting to level " + current_user.level, true);
+            messages.add(info);
+        }
+
         InfoAdapter adapter = new InfoAdapter(this, messages);
         info_listView.setAdapter(adapter);
 
@@ -173,7 +182,6 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
         editor.commit();
 
     }
-
 
     private void displayUserInfo()
     {
