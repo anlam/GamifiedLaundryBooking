@@ -151,6 +151,9 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
             @Override
             public void onClick(View v) {
 
+                messages.clear();
+                updateMessages();
+
                 editor.putBoolean("isFirstTimeOpenApp", true);
                 editor.commit();
                 System.exit(0);
@@ -163,12 +166,16 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
     private void updateMessages()
     {
-        if(messages.isEmpty()) {
+        if(messages.isEmpty() && current_user != null)
+        {
             Info info = new Info("You have got to level " + current_user.level, true);
             messages.add(info);
 
             int awards = UserInfo.scale * (current_user.level - 1) / 2;
             info = new Info("You got " + awards + " points for getting to level " + current_user.level, true);
+            messages.add(info);
+
+            info = new Info("You lost 10 points for being reported", false);
             messages.add(info);
         }
 

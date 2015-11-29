@@ -1,0 +1,114 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{{\tt DOI:}\penalty0{#1}\ }
+  \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       #1{#1}          \fi
+
+\bibitem{barth2002shared}
+{Matthew Barth} {and} {Susan Shaheen}. 2002.
+\newblock \showarticletitle{Shared-use vehicle systems: Framework for
+  classifying carsharing, station cars, and combined approaches}.
+\newblock {\em Transportation Research Record: Journal of the Transportation
+  Research Board\/} 1791 (2002), 105--112.
+\newblock
+
+
+\bibitem{deterding2011gamification}
+{Sebastian Deterding}, {Miguel Sicart}, {Lennart Nacke}, {Kenton O'Hara}, {and}
+  {Dan Dixon}. 2011.
+\newblock \showarticletitle{Gamification. using game-design elements in
+  non-gaming contexts}. In {\em CHI'11 Extended Abstracts on Human Factors in
+  Computing Systems}. ACM, 2425--2428.
+\newblock
+
+
+\bibitem{edara2008model}
+{Praveen Edara} {and} {Du{\v{s}}an Teodorovi{\'c}}. 2008.
+\newblock \showarticletitle{Model of an advance-booking system for highway
+  trips}.
+\newblock {\em Transportation Research Part C: Emerging Technologies\/} {16}, 1
+  (2008), 36--53.
+\newblock
+
+
+\bibitem{gauld2000solving}
+{Robin Gauld} {and} {Sarah Derrett}. 2000.
+\newblock \showarticletitle{Solving the surgical waiting list problem? New
+  Zealand's ‘booking system’}.
+\newblock {\em The International journal of health planning and management\/}
+  {15}, 4 (2000), 259--272.
+\newblock
+
+
+\bibitem{nextbike}
+{NextBike Gmbh}. 2015.
+\newblock NextBike.
+\newblock   (2015).
+\newblock
+\showURL{%
+\url{http://www.nextbike.net/}}
+
+
+\bibitem{hamari2014does}
+{Juho Hamari}, {Jonna Koivisto}, {and} {Harri Sarsa}. 2014.
+\newblock \showarticletitle{Does gamification work?--a literature review of
+  empirical studies on gamification}. In {\em System Sciences (HICSS), 2014
+  47th Hawaii International Conference on}. IEEE, 3025--3034.
+\newblock
+
+
+\bibitem{shove2010beyond}
+{Elizabeth Shove} {and} {others}. 2010.
+\newblock \showarticletitle{Beyond the ABC: climate change policy and theories
+  of social change}.
+\newblock {\em Environment and planning. A\/} {42}, 6 (2010), 1273.
+\newblock
+
+
+\bibitem{wiki:CRS}
+{Wikipedia}. 2015.
+\newblock Computer Reservations System.
+\newblock   (2015).
+\newblock
+\showURL{%
+\url{https://en.wikipedia.org/wiki/Computer_reservations_system}}
+
+
+\bibitem{winand2006methods}
+{Henri~MA Winand} {and} {Paul~J Harris}. 2006.
+\newblock Methods and systems for optimizing flow.
+\newblock   (June~29 2006).
+\newblock
+\newblock
+\shownote{US Patent App. 12/306,840.}
+
+
+\end{thebibliography}
