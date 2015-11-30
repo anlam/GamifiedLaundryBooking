@@ -30,6 +30,11 @@
             android:title="@string/booking"/>
 
         <item
+            android:id="@+id/drawer_my_booking"
+            android:icon="@drawable/ic_launcher_new"
+            android:title="@string/my_booking"/>
+
+        <item
             android:id="@+id/drawer_observation"
             android:icon="@drawable/ic_observation"
             android:title="@string/observation"/>

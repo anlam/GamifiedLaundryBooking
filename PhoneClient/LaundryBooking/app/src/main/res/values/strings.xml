@@ -39,4 +39,5 @@
     <string name="account">Account</string>
     <string name="observation">Observation</string>
     <string name="notification">Notification Settings</string>
+    <string name="my_booking">My Booking</string>
 </resources>
