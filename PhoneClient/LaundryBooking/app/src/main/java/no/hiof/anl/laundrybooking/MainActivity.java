@@ -50,6 +50,7 @@ import no.hiof.anl.laundrybooking.account.InfoAdapter;
 import no.hiof.anl.laundrybooking.account.LeaderBoardActivity;
 import no.hiof.anl.laundrybooking.account.ReportDialog;
 import no.hiof.anl.laundrybooking.booking.BookingActivity;
+import no.hiof.anl.laundrybooking.mybooking.MyBookingActivity;
 import no.hiof.anl.laundrybooking.observation.ObservationActivity;
 import no.hiof.anl.laundrybooking.picasso.CircleTransform;
 import no.hiof.anl.laundrybooking.notification.NotificationActivity;
@@ -362,6 +363,12 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
                     case R.id.drawer_about:
                         Snackbar.make(content, menuItem.getTitle() + " pressed", Snackbar.LENGTH_LONG).show();
                         menuItem.setChecked(false);
+                        drawerLayout.closeDrawers();
+                        return true;
+
+                    case R.id.drawer_my_booking:
+                        i = new Intent(getApplicationContext(), MyBookingActivity.class);
+                        startActivity(i);
                         drawerLayout.closeDrawers();
                         return true;
                     default:
