@@ -93,7 +93,6 @@
                 android:id="@+id/imageView2"
                 android:src="@drawable/washing_machine" />
 
-
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
@@ -101,6 +100,7 @@
                 android:text="Choose date"
                 android:id="@+id/btnDate2"
                 android:layout_gravity="center_vertical" />
+
 
 
 
@@ -174,14 +174,14 @@
                 android:src="@drawable/washing_machine" />
 
 
+
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Choose date"
-                android:id="@+id/btnDate5"
+                android:id="@+id/btnDate4"
                 android:layout_gravity="center_vertical" />
-
 
 
         </LinearLayout>

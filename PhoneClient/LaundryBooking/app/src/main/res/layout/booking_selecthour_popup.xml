@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="450dp"
         android:layout_marginBottom="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -38,9 +38,10 @@
             android:id="@+id/centerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/footer"
+            android:layout_above="@+id/infoPayment"
             android:layout_below="@+id/header"
-            android:gravity="center" >
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
 
 
             <LinearLayout
@@ -73,12 +74,35 @@
 
             </LinearLayout>
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/infoPayment"
+            android:layout_width="match_parent"
+            android:layout_above="@id/footer"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Fee: 20NOK (100 points) per hour"
+                android:id="@+id/textView9"
+                android:textColor="#d721a0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="You are allowed to book up to 2 hours per day at the current level 5"
+                android:id="@+id/textView10"
+                android:layout_below="@id/textView9"
+                android:textColor="#e39830" />
+        </RelativeLayout>
         <RelativeLayout
             android:id="@+id/footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+
             android:background="#83B5E6"
             android:gravity="center"
             android:padding="10dip" >
@@ -92,6 +116,7 @@
 
         </RelativeLayout>
     </RelativeLayout>
+
 
 
 
