@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.19)  29 NOV 2015 21:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.19)  1 DEC 2015 03:11
 entering extended mode
 **NordiCHI16.tex
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.tex
@@ -1291,6 +1291,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Non-PDF special ignored!
 
 ]) (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\gamification_bg.tex)
+(E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\rules.tex [2])
+(E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\prototype.tex)
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\eval.tex)
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\conclusion.tex)
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.bbl
@@ -1309,32 +1311,32 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
-) [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
+) [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
 
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
 Package rerunfilecheck Info: File `NordiCHI16.out' has not changed.
-(rerunfilecheck)             Checksum: A5D1E5A2CFC76E19C5C6A3E1A4A5A020;521.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
+(rerunfilecheck)             Checksum: 3AEFD4CCAD1B733F4AFFD777AEEDBDDF;547.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 19675 strings out of 493921
- 357052 string characters out of 3147291
- 438350 words of memory out of 3000000
+ 19710 strings out of 493921
+ 357645 string characters out of 3147291
+ 438343 words of memory out of 3000000
  22371 multiletter control sequences out of 15000+200000
- 57913 words of font info for 185 fonts, out of 3000000 for 9000
+ 59674 words of font info for 204 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 62i,10n,56p,1528b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,10n,56p,1543b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NordiCHI16.pdf (2 pages, 88355 bytes).
+Output written on NordiCHI16.pdf (3 pages, 96345 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
  23645 words of extra memory for PDF output out of 24883 (max. 10000000)
 
