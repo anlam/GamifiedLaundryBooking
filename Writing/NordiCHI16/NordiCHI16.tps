@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=NordiCHI16.tex
 
 [Frame0_View0,0]
-TopLine=124
-Cursor=4676
+TopLine=128
+Cursor=4742
 
 [Frame1]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=26
 NormalPos.right=1008
 NormalPos.bottom=363
 Class=LaTeXView
-Document=gamification_bg.tex
+Document=conclusion.tex
 
 [Frame2_View0,0]
 TopLine=0
-Cursor=137
+Cursor=0
 
 [Frame3]
 Flags=0
@@ -68,11 +68,11 @@ NormalPos.top=26
 NormalPos.right=1008
 NormalPos.bottom=363
 Class=LaTeXView
-Document=conclusion.tex
+Document=prototype.tex
 
 [Frame3_View0,0]
 TopLine=0
-Cursor=0
+Cursor=150
 
 [Frame4]
 Flags=0
@@ -86,13 +86,13 @@ NormalPos.top=26
 NormalPos.right=1008
 NormalPos.bottom=363
 Class=LaTeXView
-Document=intro.tex
+Document=rules.tex
 
 [Frame4_View0,0]
-TopLine=7
-Cursor=1641
+TopLine=25
+Cursor=2142
 
 [SessionInfo]
 FrameCount=5
-ActiveFrame=2
+ActiveFrame=3
 
