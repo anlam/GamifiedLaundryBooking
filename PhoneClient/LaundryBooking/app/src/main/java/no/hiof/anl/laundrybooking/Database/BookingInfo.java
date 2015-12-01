@@ -2,6 +2,8 @@ package no.hiof.anl.laundrybooking.Database;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
@@ -21,6 +23,8 @@ public class BookingInfo implements Serializable
     public boolean isBuyByCash;
     public int points_earn;
 
+    public int startHour;
+
     public BookingInfo()
     {
         date = new GregorianCalendar();
@@ -28,10 +32,12 @@ public class BookingInfo implements Serializable
             date.setTimeInMillis(time);
     }
 
-    public BookingInfo(double duration, int userPin, int machine_id)
+    public BookingInfo(Calendar startHour, double duration, int userPin, int machine_id)
     {
+        time = startHour.getTime().getTime();
+        //this.startHour =  time.
         date = new GregorianCalendar();
-        time = date.getTimeInMillis();
+    //    time = date.getTimeInMillis();
         this.duration = duration;
         this.userPin = userPin;
         this.isDone = false;
@@ -107,5 +113,18 @@ public class BookingInfo implements Serializable
         return sdf.format(gregorianCalendar.getTime());
     }
 
+    public String getDateFormat(){
+        GregorianCalendar gregorianCalendar = new GregorianCalendar();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        return sdf.format(time);
+    }
+
+    public String getBookingDateInString() {
+        return  getDateFormat() + " - "  + getEndTimeFormat(time);
+    }
+
+    public Date getDate(){
+        return new Date(time * 1000);
+    }
 
 }
