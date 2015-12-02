@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.19)  2 DEC 2015 10:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.19)  2 DEC 2015 10:55
 entering extended mode
 **NordiCHI16.tex
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.tex
@@ -1468,11 +1468,11 @@ Package rerunfilecheck Info: File `NordiCHI16.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 21068 strings out of 493921
- 381391 string characters out of 3147291
+ 21071 strings out of 493921
+ 381418 string characters out of 3147291
  464072 words of memory out of 3000000
  23626 multiletter control sequences out of 15000+200000
- 66614 words of font info for 240 fonts, out of 3000000 for 9000
+ 66839 words of font info for 242 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  62i,11n,96p,1543b,518s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
@@ -1480,7 +1480,7 @@ cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xbtt.pfb
 1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NordiCHI16.pdf (6 pages, 2604181 bytes).
+Output written on NordiCHI16.pdf (6 pages, 2604186 bytes).
 PDF statistics:
  231 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
