@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=rules.tex
 
 [Frame5_View0,0]
-TopLine=23
-Cursor=2784
+TopLine=27
+Cursor=1470
 
 [Frame6]
 Flags=0
@@ -125,10 +125,10 @@ Class=LaTeXView
 Document=prototype.tex
 
 [Frame6_View0,0]
-TopLine=21
-Cursor=1797
+TopLine=0
+Cursor=0
 
 [SessionInfo]
 FrameCount=7
-ActiveFrame=2
+ActiveFrame=5
 
