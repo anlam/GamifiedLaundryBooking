@@ -34,12 +34,43 @@ public class ObservationActivity extends AppCompatActivity
         btnGoToBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ObservationActivity.this, BookingActivity.class);
-                myIntent.putExtra("caller", R.id.drawer_my_booking);
-                ObservationActivity.this.startActivity(myIntent);
+                OpenBookingActivity();
 
             }
         });
 
+        Button btnGoToBooking2 = (Button) findViewById(R.id.btnGoToBooking2);
+        btnGoToBooking2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenBookingActivity();
+
+            }
+        });
+
+        Button btnGoToBooking3 = (Button) findViewById(R.id.btnGoToBooking3);
+        btnGoToBooking3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenBookingActivity();
+
+            }
+        });
+
+        Button btnGoToBooking4 = (Button) findViewById(R.id.btnGoToBooking4);
+        btnGoToBooking4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenBookingActivity();
+
+            }
+        });
+
+    }
+
+    private void OpenBookingActivity(){
+        Intent myIntent = new Intent(ObservationActivity.this, BookingActivity.class);
+        myIntent.putExtra("caller", R.id.drawer_my_booking);
+        ObservationActivity.this.startActivity(myIntent);
     }
 }

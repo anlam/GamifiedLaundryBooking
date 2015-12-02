@@ -153,20 +153,27 @@ public class BookingActivity extends AppCompatActivity
                 .setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View arg0) {
-                        Calendar cal = Calendar.getInstance();
-                        cal.set(Calendar.YEAR, year_x);
-                        cal.set(Calendar.MONTH, month_x);
-                        cal.set(Calendar.DAY_OF_MONTH, day_x);
-                        cal.set(Calendar.HOUR_OF_DAY, hourStart);
-                        cal.set(Calendar.MINUTE, 0);
-                        cal.set(Calendar.SECOND, 0);
+                        if(numberOfHourSelected > 0){
+                            if(numberOfHourSelected == 2){
+                                hourStart--;
+                            }
+
+                            Calendar cal = Calendar.getInstance();
+                            cal.set(Calendar.YEAR, year_x);
+                            cal.set(Calendar.MONTH, month_x - 1);
+                            cal.set(Calendar.DAY_OF_MONTH, day_x);
+                            cal.set(Calendar.HOUR_OF_DAY, hourStart);
+                            cal.set(Calendar.MINUTE, 0);
+                            cal.set(Calendar.SECOND, 0);
 
 
 
-                        AddBookingInfoToDB(new BookingInfo(cal, numberOfHourSelected, 0, 1));
-                        Toast.makeText(getApplicationContext(),
-                                "The booking is done", Toast.LENGTH_LONG).show();
-                        numberOfHourSelected = 0;
+                            AddBookingInfoToDB(new BookingInfo(cal, numberOfHourSelected, 0, 1));
+                            Toast.makeText(getApplicationContext(),
+                                    "The booking is done. You can view it in My Booking", Toast.LENGTH_LONG).show();
+                            numberOfHourSelected = 0;
+                        }
+
                         popupWindow.dismiss();
 
                     }
@@ -271,13 +278,16 @@ public class BookingActivity extends AppCompatActivity
                                                 if (previousCheckbox == null || !previousCheckbox.isChecked()) {
                                                     View nextChild = ll.getChildAt(i + 2);
 
-                                                    if (((TableRow) nextChild).getChildCount() == 3) {
+                                                    if (nextChild != null) {
+                                                        if (((TableRow) nextChild).getChildCount() == 3) {
 
-                                                        CheckBox nextCheckbox = (CheckBox) ((TableRow) nextChild).getChildAt(2);
-                                                        nextCheckbox.setEnabled(true);
+                                                            CheckBox nextCheckbox = (CheckBox) ((TableRow) nextChild).getChildAt(2);
+                                                            nextCheckbox.setEnabled(true);
+                                                        }
+                                                        cbox.setEnabled(false);
+                                                        i += 2;
                                                     }
-                                                    cbox.setEnabled(false);
-                                                    i += 2;
+
                                                 }
                                             }
                                         } else {

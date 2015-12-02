@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -43,6 +44,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import no.hiof.anl.laundrybooking.Database.BookingInfo;
 import no.hiof.anl.laundrybooking.Database.Database;
 import no.hiof.anl.laundrybooking.Database.UserInfo;
 import no.hiof.anl.laundrybooking.account.Info;
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
     private Button logout_button;
 
     private static ArrayList<Info> messages;
-
+    private static ArrayList<BookingInfo> bookingInfos;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -154,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
                 messages.clear();
                 updateMessages();
-
+                clearBookingInfos();
                 editor.putBoolean("isFirstTimeOpenApp", true);
                 editor.commit();
                 System.exit(0);
@@ -163,6 +165,27 @@ public class MainActivity extends AppCompatActivity implements LoginDialog.Notic
 
         Database.getAllUsers();
 
+    }
+
+    private void clearBookingInfos(){
+        SharedPreferences settingsBookingInfo;
+        SharedPreferences.Editor editorBookingInfo;
+
+        settingsBookingInfo = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        editorBookingInfo = settingsBookingInfo.edit();
+
+        String json = settingsBookingInfo.getString("bookingInfos", null);
+
+        Gson gson = new Gson();
+        Type collectionType = new TypeToken<ArrayList<BookingInfo>>(){}.getType();
+
+        bookingInfos = gson.fromJson(json, collectionType);
+
+        bookingInfos.clear();
+
+        String jsonBookingInfo = gson.toJson(bookingInfos);
+        editorBookingInfo.putString("bookingInfos", jsonBookingInfo);
+        editorBookingInfo.commit();
     }
 
     private void updateMessages()
