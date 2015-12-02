@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=NordiCHI16.tex
 
 [Frame0_View0,0]
-TopLine=128
-Cursor=4742
+TopLine=36
+Cursor=1922
 
 [Frame1]
 Flags=0
@@ -68,31 +68,13 @@ NormalPos.top=26
 NormalPos.right=1008
 NormalPos.bottom=363
 Class=LaTeXView
-Document=prototype.tex
+Document=eval.tex
 
 [Frame3_View0,0]
-TopLine=0
-Cursor=150
-
-[Frame4]
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-1
-MaxPos.y=-1
-NormalPos.left=4
-NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
-Class=LaTeXView
-Document=rules.tex
-
-[Frame4_View0,0]
-TopLine=25
-Cursor=2142
+TopLine=15
+Cursor=1938
 
 [SessionInfo]
-FrameCount=5
+FrameCount=4
 ActiveFrame=3
 

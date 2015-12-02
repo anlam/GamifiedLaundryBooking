@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.19)  1 DEC 2015 17:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.19)  2 DEC 2015 02:56
 entering extended mode
 **NordiCHI16.tex
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.tex
@@ -1346,13 +1346,13 @@ Underfull \vbox (badness 3078) has occurred while \output is active []
 
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\rules.tex [2])
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\prototype.tex
-<figures/overview.pdf, id=102, 571.38469pt x 294.34969pt>
+<figures/overview.pdf, id=114, 571.38469pt x 294.34969pt>
 File: figures/overview.pdf Graphic file (type pdf)
  <use figures/overview.pdf>
 Package pdftex.def Info: figures/overview.pdf used on input line 9.
 (pdftex.def)             Requested size: 243.98238pt x 125.68758pt.
 
-<figures/Monitoring.jpg, id=104, 716.6775pt x 717.68124pt>
+<figures/Monitoring.jpg, id=116, 716.6775pt x 717.68124pt>
 File: figures/Monitoring.jpg Graphic file (type jpg)
  <use figures/Monitoring.jpg>
 Package pdftex.def Info: figures/Monitoring.jpg used on input line 17.
@@ -1361,64 +1361,85 @@ Package pdftex.def Info: figures/Monitoring.jpg used on input line 17.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/inuse.png, id=106, 1927.2pt x 1084.05pt>
+<figures/inuse.png, id=118, 1927.2pt x 1084.05pt>
 File: figures/inuse.png Graphic file (type png)
  <use figures/inuse.png>
 Package pdftex.def Info: figures/inuse.png used on input line 25.
 (pdftex.def)             Requested size: 195.18663pt x 109.78427pt.
 
-<figures/menu.png, id=108, 1084.05pt x 1927.2pt>
+<figures/menu.png, id=122, 1084.05pt x 1927.2pt>
 File: figures/menu.png Graphic file (type png)
  <use figures/menu.png>
-Package pdftex.def Info: figures/menu.png used on input line 33.
+Package pdftex.def Info: figures/menu.png used on input line 34.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
 
-<figures/home.png, id=109, 1084.05pt x 1927.2pt>
+<figures/home.png, id=123, 1084.05pt x 1927.2pt>
 File: figures/home.png Graphic file (type png)
  <use figures/home.png>
-Package pdftex.def Info: figures/home.png used on input line 35.
+Package pdftex.def Info: figures/home.png used on input line 36.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
 
-<figures/booking.png, id=110, 1084.05pt x 1927.2pt>
+<figures/booking.png, id=124, 1084.05pt x 1927.2pt>
 File: figures/booking.png Graphic file (type png)
  <use figures/booking.png>
-Package pdftex.def Info: figures/booking.png used on input line 36.
+Package pdftex.def Info: figures/booking.png used on input line 37.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
 
-<figures/observation.png, id=111, 1084.05pt x 1927.2pt>
+<figures/observation.png, id=125, 1084.05pt x 1927.2pt>
 File: figures/observation.png Graphic file (type png)
  <use figures/observation.png>
-Package pdftex.def Info: figures/observation.png used on input line 37.
+Package pdftex.def Info: figures/observation.png used on input line 38.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
 
-<figures/stat.png, id=112, 1084.05pt x 1927.2pt>
+<figures/stat.png, id=126, 1084.05pt x 1927.2pt>
 File: figures/stat.png Graphic file (type png)
  <use figures/stat.png>
-Package pdftex.def Info: figures/stat.png used on input line 38.
+Package pdftex.def Info: figures/stat.png used on input line 39.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
-
-<figures/hours.png, id=113, 1084.05pt x 1927.2pt>
+ [3 <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/overview.pdf> <E:/InteractionDesign/I
+nteractionDesignFinalProject/Writing/NordiCHI16/figures/Monitoring.jpg> <E:/InteractionDesign/InteractionDesignFinalProj
+ect/Writing/NordiCHI16/figures/inuse.png>]
+<figures/hours.png, id=158, 1084.05pt x 1927.2pt>
 File: figures/hours.png Graphic file (type png)
  <use figures/hours.png>
-Package pdftex.def Info: figures/hours.png used on input line 46.
+Package pdftex.def Info: figures/hours.png used on input line 53.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
 
-<figures/leaderboard.png, id=114, 1084.05pt x 1927.2pt>
+Underfull \hbox (badness 1107) in paragraph at lines 53--53
+[]\T1/ptm/m/n/9 (+20) (a) |Time-slots and award
+ []
+
+<figures/leaderboard.png, id=159, 1084.05pt x 1927.2pt>
 File: figures/leaderboard.png Graphic file (type png)
  <use figures/leaderboard.png>
-Package pdftex.def Info: figures/leaderboard.png used on input line 48.
+Package pdftex.def Info: figures/leaderboard.png used on input line 55.
 (pdftex.def)             Requested size: 97.59146pt x 173.46992pt.
-)
-(E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\eval.tex)
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\eval.tex
+Overfull \hbox (21.01537pt too wide) in paragraph at lines 4--21
+ [][] 
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 23.
+
+[4 <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/menu.png> <E:/InteractionDesign/Intera
+ctionDesignFinalProject/Writing/NordiCHI16/figures/home.png> <E:/InteractionDesign/InteractionDesignFinalProject/Writing
+/NordiCHI16/figures/booking.png> <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/observat
+ion.png> <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/stat.png> <E:/InteractionDesign/
+InteractionDesignFinalProject/Writing/NordiCHI16/figures/hours.png> <E:/InteractionDesign/InteractionDesignFinalProject/
+Writing/NordiCHI16/figures/leaderboard.png>])
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\conclusion.tex)
-(E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.bbl [3 <E:/InteractionDesign/Interacti
-onDesignFinalProject/Writing/NordiCHI16/figures/overview.pdf> <E:/InteractionDesign/InteractionDesignFinalProject/Writin
-g/NordiCHI16/figures/Monitoring.jpg> <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/inus
-e.png>]
+(E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.bbl
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 77.
 LaTeX Font Info:    Try loading font information for T1+txtt on input line 77.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
 Package microtype Info: Loading generic settings for font family
@@ -1429,13 +1450,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
-) [4 <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/menu.png> <E:/InteractionDesign/Inte
-ractionDesignFinalProject/Writing/NordiCHI16/figures/home.png> <E:/InteractionDesign/InteractionDesignFinalProject/Writi
-ng/NordiCHI16/figures/booking.png> <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/observ
-ation.png> <E:/InteractionDesign/InteractionDesignFinalProject/Writing/NordiCHI16/figures/stat.png> <E:/InteractionDesig
-n/InteractionDesignFinalProject/Writing/NordiCHI16/figures/hours.png> <E:/InteractionDesign/InteractionDesignFinalProjec
-t/Writing/NordiCHI16/figures/leaderboard.png>]
+) [5]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
+ [6
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
 
 (E:\InteractionDesign\InteractionDesignFinalProject\Writing\NordiCHI16\NordiCHI16.aux)
@@ -1448,26 +1467,26 @@ Package rerunfilecheck Warning: File `NordiCHI16.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `NordiCHI16.out':
-(rerunfilecheck)             Before: DFEB4B3ACA8C9791835809F7D2E31643;706
-(rerunfilecheck)             After:  E8BD0CA5883EAB1CEB10E6D0D0A30671;706.
+(rerunfilecheck)             Before: DB1B63194F11EC0F873554E1A948CFE1;964
+(rerunfilecheck)             After:  908190169C50140E41828517B6599A14;964.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 21020 strings out of 493921
- 380899 string characters out of 3147291
- 463985 words of memory out of 3000000
- 23620 multiletter control sequences out of 15000+200000
- 64424 words of font info for 218 fonts, out of 3000000 for 9000
+ 21065 strings out of 493921
+ 381364 string characters out of 3147291
+ 464071 words of memory out of 3000000
+ 23626 multiletter control sequences out of 15000+200000
+ 66389 words of font info for 238 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 62i,10n,96p,1543b,512s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,11n,96p,1543b,518s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NordiCHI16.pdf (4 pages, 2537974 bytes).
+Output written on NordiCHI16.pdf (6 pages, 2603128 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 27807 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 27831 words of extra memory for PDF output out of 29859 (max. 10000000)
 
