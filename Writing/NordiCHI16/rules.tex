@@ -1,22 +1,22 @@
-Based on the information collected from users and \emph{envisioning}, we design and prototype {\toolname}, a laundry booking system which affords:
+Based on the information collected from users and \emph{envisioning}, we have designed and prototyped {\toolname}, a laundry booking system which affords:
 \begin{itemize}
 \item Reserving and managing time-slot on mobile phone or at the laundry room.
-\item Notifying the users for upcoming bookings, finished jobs.
+\item Notifying the users of upcoming bookings, finished jobs.
 \item Real-time status observation of the machines.
 \item Display of statistics about usage history of the machines.
 \end{itemize}
-Additionally, avatars, points, level/progress, leader board are added in order to make doing laundry more dramatic.
+Additionally, avatars, points, level/progress and leader board are added in order to make doing laundry more dramatic.
 
 Avatar is a graphical representation of a user. Users are not required to add an avatar image. If they do, their avatars could appear along with their rankings on the leader board. 
 
 Leader board shows user names, avatar, levels and their ranks among other users. Leader board ranks users based on their current levels and progressions. By default, the system shows only top twenty users on the leader board.
 
-Level is used for ranking users. The users need to earn some points in order to get to next level. They are also awarded points for level up. The amount of required points keeps increasing with the level number. In exchange of that, they also get bigger awards. In addition, there is also limitation on the number of reservations (per week) that users allows to make. This number would be increased when the users get to higher levels. Progression signifies the percentage of points user already get over the required points they need for getting to next level. Whenever some users are at the same level, progressions are used to determine their ranks on the leader board.
+Level is used for ranking users. The users need to earn some points in order to get to the next level. They are also awarded points for leveling up. The amount of required points keeps increasing with the level number. In exchange for that, they also get bigger awards. In addition, there is also limitation on the number of reservations (per week) that users allows to make. This number would increase when the users get to higher levels. Progression signifies the percentage of points users already get over the required points they need for getting to the next level. Whenever some users are at the same level, progressions are used to determine their ranks on the leader board.
  
-Typically, a laundry booking system allows users to reserve a washing machine for a period of time. They also have to pay for that reservation by cash. With {\toolname}, users can also make reservation with their points. However, earning some points is not easy whereas it costs much more points, compared with a smaller amount of money, to book a machine. The users can earn points by:
+Typically, a laundry booking system allows users to reserve a washing machine for a period of time. They also have to pay for that reservation by cash. With {\toolname}, users can also make reservations with their points. However, earning some points is not easy whereas it costs much more points, compared with a smaller amount of money, to book a machine. The users can earn points by:
 \begin{itemize}
 \item Making reservations. The users earn some points for each time they book a machine. However, the amounts of awarded points are not the same for every time-slot. Booking in unpopular time-slots would get them more points. Every week, the system calculates statistics about the bookings made in that weeks by hours and days; based on these numbers, it would determine and assign points to each time-slot on the principle of balancing the amounts of bookings in each time-slot.
-\item Level up. The users would get some points when getting to a new level. The higher level, the more awarded points.
-\item Being in top twenty of the leader board. Every week, the system would awards some points to users whose name are shown on the leader board. The higher rank, the bigger award.
-\item Reporting. By reserving a machine, the users are responsible for finishing their job within a period of time. However, if they forget to pick up their clothes, other users could report them as being late. They would lose some points for the person who report them.
+\item Leveling up. The users would get some points when getting to a new level. The higher level, the more awarded points.
+\item Being in top twenty of the leader board. Every week, the system would award some points to users whose names are shown on the leader board. The higher rank, the bigger award.
+\item Reporting. By reserving a machine, the users are responsible for finishing their job within a period of time. However, if they forget to pick up their clothes, other users could report them as being late. They would lose some points for the person who has reported them.
 \end{itemize}

@@ -10,14 +10,14 @@ Based on the presented idea, we design and present the prototype which consists 
   \caption{Three components of the booking system.}~\label{fig:figure1}
 \end{figure}
 \subsubsection{Monitoring Device}
-Each monitoring device has a RFID reader and a screen which displays interactive instruction and information of the machine such as: machine id, remaining time of current job, current state of washing machine (\emph{AVAILABE} - there is still enough time before the next reservation begins, \emph{USED IN A MOMENT} - next reservation will begin shortly, \emph{RESERVED} - the machine was already booked at that moment, \emph{IN USE} - machine is running, \emph{FINISHED} - washing has just finished), etc.
+Each monitoring device has a RFID reader and a screen which displays interactive instructions and information of the machine such as: machine id, remaining time of current job, current state of washing machine (\emph{AVAILABE} - there is still enough time before the next reservation begins, \emph{USED IN A MOMENT} - next reservation will begin shortly, \emph{RESERVED} - the machine was already booked at that moment, \emph{IN USE} - machine is running, \emph{FINISHED} - washing has just finished), etc.
  For prototyping monitoring device, we use an android phone as a display and an arduino uno board with RFID shield (see Figure \ref{fig:figure2}).
 \begin{figure}[h]
 \centering
   \includegraphics[width=0.7\columnwidth]{figures/Monitoring}
   \caption{The prototype of monitoring device.}~\label{fig:figure2}
 \end{figure}
-To activate a machine, users could either scan their RFID cards or enter PIN number. If the users already reserved the current time-slot, monitoring device would instruct them to start the machine; otherwise they have go through booking process right on the monitoring device before using the machine.
+To activate a machine, users could either scan their RFID cards or enter PIN number. If the users already reserved the current time-slot, monitoring device would instruct them to start the machine; otherwise they have to go through booking process right on the monitoring device before using the machine.
 
 When the machine is \emph{IN USE} or \emph{FINISHED} state, the \emph{booking id} of current session would be shown on the screen. Figure \ref{fig:figure3} shows the screenshot of the display when the machine is \emph{IN USE}. This id disappears once the users take their clothes out of the machine. Therefore, if the users are being late, other users could use this \emph{booking id} and the \emph{machine id} for reporting.
 \begin{figure}[h]
@@ -26,9 +26,9 @@ When the machine is \emph{IN USE} or \emph{FINISHED} state, the \emph{booking id
   \caption{Monitoring display when the machine is running.}~\label{fig:figure3}
 \end{figure}
 \subsubsection{{\toolname} Application}
-{\toolname} is an android application which allows users to reserve a washing machine, manage booking, observe the current states of the machines, etc. Figure \ref{fig:menu} shows the menu of the application.
+{\toolname} is an Android application which allows users to reserve a washing machine, manage booking, observe the current states of the machines, etc. Figure \ref{fig:menu} shows the menu of the application.
 
-The \emph{Booking} tab (see Figure \ref{fig:booking}) allows users to make a reservation for a specific time-slot. There is limitation on the number of time-slots user could book in a week. This number would be increased when user get to higher level. Figure \ref{fig:hours} shows the booking interface with time-slots. Users would be awarded points for each time-slot they reserve. The amounts of awards depend on how popular that time-slot is.
+The \emph{Booking} tab (see Figure \ref{fig:booking}) allows users to make a reservation for a specific time-slot. There is limitation on the number of time-slots user could book in a week. This number would increase when user get to higher level. Figure \ref{fig:hours} shows the booking interface with time-slots. Users would be awarded points for each time-slot they reserve. The amounts of awards depend on how popular that time-slot is.
 \begin{figure*}%
     \centering
     \subfloat[Main menu]{{\includegraphics[width=0.4\columnwidth]{figures/menu} \label{fig:menu}}}
@@ -47,7 +47,7 @@ In \emph{My Booking} tab, users could find all their upcoming bookings. They cou
 
 There are two bar charts displayed in \emph{Statistics} tab (see Figure \ref{fig:stat}). The first one illustrates numbers of bookings in previous week by hours while the second one represents these numbers by days. Users could use these statistics to plan their ``laundry strategy'' of the week.
 
-\emph{Notification} allows users to set reminder. The application always use in-app notification to remind users for upcoming bookings or finished jobs. In addition, they could choose to set reminder by email or SMS message.
+\emph{Notification} allows users to set reminders. The application always use in-app notification to remind users for upcoming bookings or finished jobs. In addition, they could choose to set reminder by email or SMS message.
 \begin{figure}[h]%
     \centering
     \subfloat[Time-slots and award points]{{\includegraphics[width=0.4\columnwidth]{figures/hours} \label{fig:hours}}}
@@ -57,4 +57,4 @@ There are two bar charts displayed in \emph{Statistics} tab (see Figure \ref{fig
     \label{fig:figure5}
 \end{figure}
 
-The \emph{Home} interface (see Figure \ref {fig:home}) displays all information about the user. This is where gamification idea is implemented. In this tab, users could find his avatars, names,  balance and points, levels and progression as well as messages about their activities. There are also buttons allow them to access leader board (see Figure \ref{fig:leaderboard}), report a person or add money to account. 
+The \emph{Home} interface (see Figure \ref {fig:home}) displays all information about the user. This is where gamification idea is implemented. In this tab, users could find their avatars, names,  balance and points, levels and progression as well as messages about their activities. There are also buttons allowing them to access leader board (see Figure \ref{fig:leaderboard}), report a person or add money to their accounts. 
