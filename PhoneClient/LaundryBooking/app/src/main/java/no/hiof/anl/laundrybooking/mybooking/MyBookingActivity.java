@@ -44,13 +44,17 @@ public class MyBookingActivity extends AppCompatActivity {
         Type collectionType = new TypeToken<ArrayList<BookingInfo>>(){}.getType();
         ArrayList<BookingInfo> bookingInfos = gson.fromJson(json, collectionType);
 
-
-        Collections.sort(bookingInfos, new Comparator<BookingInfo>() {
-            @Override
-            public int compare(BookingInfo lhs, BookingInfo rhs) {
-                return rhs.getDate().compareTo(rhs.getDate());
-            }
-        });
+        if(bookingInfos != null){
+            Collections.sort(bookingInfos, new Comparator<BookingInfo>() {
+                @Override
+                public int compare(BookingInfo lhs, BookingInfo rhs) {
+                    return rhs.getDate().compareTo(rhs.getDate());
+                }
+            });
+        }
+        else {
+            bookingInfos = new ArrayList<BookingInfo>();
+        }
         MyBookingAdapter adapter = new MyBookingAdapter(this, bookingInfos);
 
         listView1.setAdapter(adapter);
