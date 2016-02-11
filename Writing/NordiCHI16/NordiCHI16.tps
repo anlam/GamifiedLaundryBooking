@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
+NormalPos.right=1102
+NormalPos.bottom=444
 Class=LaTeXView
-Document=laundry_bg.tex
+Document=abstract.tex
 
 [Frame0_View0,0]
-TopLine=7
-Cursor=1609
+TopLine=0
+Cursor=18
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
+NormalPos.right=1102
+NormalPos.bottom=444
 Class=LaTeXView
-Document=NordiCHI16.tex
+Document=gamification_bg.tex
 
 [Frame1_View0,0]
-TopLine=171
-Cursor=5813
+TopLine=0
+Cursor=515
 
 [Frame2]
 Flags=0
@@ -47,14 +47,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
-Class=BibTeXView
-Document=ref.bib
+NormalPos.right=1102
+NormalPos.bottom=444
+Class=LaTeXView
+Document=intro.tex
 
 [Frame2_View0,0]
-TopLine=70
-Cursor=2253
+TopLine=0
+Cursor=708
 
 [Frame3]
 Flags=0
@@ -65,14 +65,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
-Class=LaTeXView
-Document=conclusion.tex
+NormalPos.right=1102
+NormalPos.bottom=444
+Class=BibTeXView
+Document=ref.bib
 
 [Frame3_View0,0]
-TopLine=0
-Cursor=581
+TopLine=10
+Cursor=610
 
 [Frame4]
 Flags=0
@@ -83,10 +83,10 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
+NormalPos.right=1102
+NormalPos.bottom=444
 Class=LaTeXView
-Document=eval.tex
+Document=conclusion.tex
 
 [Frame4_View0,0]
 TopLine=0
@@ -101,14 +101,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
+NormalPos.right=1102
+NormalPos.bottom=444
 Class=LaTeXView
-Document=rules.tex
+Document=NordiCHI16.tex
 
 [Frame5_View0,0]
-TopLine=27
-Cursor=3142
+TopLine=136
+Cursor=4491
 
 [Frame6]
 Flags=0
@@ -119,14 +119,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
+NormalPos.right=1102
+NormalPos.bottom=444
 Class=LaTeXView
 Document=prototype.tex
 
 [Frame6_View0,0]
 TopLine=0
-Cursor=0
+Cursor=858
 
 [Frame7]
 Flags=0
@@ -137,16 +137,34 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=363
+NormalPos.right=1102
+NormalPos.bottom=444
 Class=LaTeXView
-Document=intro.tex
+Document=related.tex
 
 [Frame7_View0,0]
-TopLine=7
-Cursor=2272
+TopLine=0
+Cursor=717
+
+[Frame8]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1102
+NormalPos.bottom=444
+Class=LaTeXView
+Document=rules.tex
+
+[Frame8_View0,0]
+TopLine=3
+Cursor=486
 
 [SessionInfo]
-FrameCount=8
-ActiveFrame=3
+FrameCount=9
+ActiveFrame=0
 

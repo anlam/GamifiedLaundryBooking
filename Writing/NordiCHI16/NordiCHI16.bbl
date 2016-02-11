@@ -41,6 +41,16 @@
 \newblock
 
 
+\bibitem{concur}
+{Inc Concur~Technologies}. 2014.
+\newblock Concur TripLink Now Includes Gamification Features, Enables Smarter
+  Travel Booking with Greater Visibility into Spend.
+\newblock   (2014).
+\newblock
+\showURL{%
+\url{https://www.concur.com/en-us/media-resources/press-releases/07-28-14}}
+
+
 \bibitem{deterding2011game}
 {Sebastian Deterding}, {Dan Dixon}, {Rilla Khaled}, {and} {Lennart Nacke}.
   2011.
@@ -93,22 +103,12 @@
 \newblock
 
 
-\bibitem{wiki:CRS}
-{Wikipedia}. 2015.
-\newblock Computer Reservations System.
-\newblock   (2015).
+\bibitem{bcd}
+{BCD Travel}. 2014.
+\newblock   (2014).
 \newblock
 \showURL{%
-\url{https://en.wikipedia.org/wiki/Computer_reservations_system}}
-
-
-\bibitem{winand2006methods}
-{Henri~MA Winand} {and} {Paul~J Harris}. 2006.
-\newblock Methods and systems for optimizing flow.
-\newblock   (June~29 2006).
-\newblock
-\newblock
-\shownote{US Patent App. 12/306,840.}
+\url{http://www.bcdtravel.com/}}
 
 
 \end{thebibliography}
